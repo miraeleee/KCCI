@@ -2,7 +2,7 @@ package com.test.exam01;
 
 public class Sample {
     int x,y; //인스턴스 변수
-    static int result; //클래스 변수
+    static int result; //클래스 변수(멤버변수)
 
     void add(int a, int b){
         x=a;

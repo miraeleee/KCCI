@@ -1,6 +1,6 @@
 package com.test.member;
 
-public class Member { //DTO(Data Transfer Object)
+public class Member { //**DTO(Data Transfer Object)
 
         private String name;
         private String gender;
@@ -18,13 +18,13 @@ public class Member { //DTO(Data Transfer Object)
              System.out.println("인자가 하나인 생성자를 통해 객체가 생성되었습니다.");
         }
 
-        public Member(String name, String gender, int age){ 
+        public Member(String name, String gender, int age){ //인자가 3개인 생성자 정의
         this.name = name;
         this.gender = gender;
         this.age = age;
 
         System.out.println("멤버 변수가 초기화 되었습니다.");
-         }//인자가 3개인 생성자 정의
+        }
 
     public String getName(){
         return this.name;
