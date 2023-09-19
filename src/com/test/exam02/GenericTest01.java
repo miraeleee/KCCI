@@ -2,7 +2,7 @@ package com.test.exam02;
 
 public class GenericTest01 {
     public static void main(String[] args) {
-        //제네릭이란, 클래스뒤에 타입지정하여 선언하고, 컴파일시에 파입 설정하여 수행가능하도록 하는것 
+        //제네릭이란, 클래스뒤에 타입지정하여 선언하고, 컴파일시에 타입 설정하여 수행가능하도록 하는것 
         GStack<String> stringGStack = new GStack<String>(); //String타입 자체를 인자로 넘김.
 
         stringGStack.push("Seoul");
@@ -28,7 +28,7 @@ class GStack<T>{ // t에 spring이 들어옴
         /*
          1. tos =0, 0번째에 "Seoul", tos =1
          2. tos =1. 1번쨰에 "Busan", tos =2
-         3. tos =2, 2qjsWo "LA", tos =3
+         3. tos =2, 2번쨰에 "LA", tos =3
          */
     }
     public T pop(){

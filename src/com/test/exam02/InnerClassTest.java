@@ -12,6 +12,7 @@ public class InnerClassTest {
      System.out.println("inClass.inNum="+inClass.inNum);
     }
 }
+
 class OutClass{
     private int num =10; //OutClass의 멤버 변수
     private static int sNum =20; //OutClass의 멤버 변수
@@ -20,18 +21,19 @@ class OutClass{
     public OutClass(){ //OutClass의 생성자
         //내부 클래스를 인스턴스화 시켜 OutClass가 인스턴스화해서 생성될때 같이 생성되도록 함
         inClass = new InClass(); //내부클래스 초기화
-    }
+    } 
 
     //OutClass의 내부 클래스
     class InClass{
-        int intNum =100;
+        int inNum =100;
+
         void Intest(){
             System.out.println("외부 클래스의 인스턴스 변수:"+num);
             System.out.println("외부 클래스의 정적 변수:"+num);
         }
     }
-
     public void usingClass(){
         inClass.Intest();
     }
 }
+
