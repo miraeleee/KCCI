@@ -1,7 +1,7 @@
 package com.test.member;
 
 public class Member { //**DTO(Data Transfer Object)
-
+        private int id;
         private String name;
         private String gender;
         private int age;
@@ -18,7 +18,8 @@ public class Member { //**DTO(Data Transfer Object)
              System.out.println("인자가 하나인 생성자를 통해 객체가 생성되었습니다.");
         }
 
-        public Member(String name, String gender, int age){ //인자가 3개인 생성자 정의
+        public Member(int id, String name, String gender, int age){ //인자가 3개인 생성자 정의
+        this.id = id;
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -26,6 +27,12 @@ public class Member { //**DTO(Data Transfer Object)
         System.out.println("멤버 변수가 초기화 되었습니다.");
         }
 
+    public int getId(){
+        return this.id;
+    }
+    public void setId(int id){
+        this.id = id;
+    }
     public String getName(){
         return this.name;
     }
