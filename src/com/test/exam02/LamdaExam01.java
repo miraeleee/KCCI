@@ -8,32 +8,21 @@ import java.util.function.Supplier;
 // 사용자가 생성하는 람다 표현식 2가지
 @FunctionalInterface //여기 아래에 나오는 인터페이스는 람다표현식으로 만들때 사용할 인터페이스임. 컴파일러에게 공지
 interface MyLamdaFunction{
-    int sum(int a, int b); //인터페이스 메소드 선언
+    int sum(int a, int b); //인터페이스내에 메소드 선언
 }
 @FunctionalInterface
 interface MyPrint{
     String printLamda();
 }
 public class LamdaExam01 {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         // 인터페이스는 인스턴스화 못하고, 변수 선언만하는것임. 변수선언후 람다표현식
-        
         // 람다식을 이용한 익명함수: 2개의 인자를 받아서 메소드로 계산 후 그 값을 반환하는 형태
-        MyLamdaFunction lamdaFunction = (int a, int b)-> a+b; //인터페이스내에 메소드 선언을 정의
-        /*
-         public int sum(int a, int b){
-            return a + b;
-         }
-         */
-        System.out.println(lamdaFunction.sum(3,4)); //인터페이스 메소드 실행
-    
+        MyLamdaFunction lamdaFunction = (int a, int b)-> a+b; 
+        System.out.println(lamdaFunction.sum(3,4));
+
         // 람다식을 이용한 익명함수: 인자없이 문자열만 반환(화살표 리턴의 의미임)
         MyPrint myPrint = () -> "Hello World"; //람다표현식으로 구현체를 만듦
-        /*
-         public String printLamda(){
-            return "Hello World"
-         }
-         */
         System.out.println(myPrint.printLamda());
 
         // 기존 만들어진것을 람다 표현식을 위한 인터페이스를 활용하는 예
@@ -44,10 +33,8 @@ public class LamdaExam01 {
          System.out.println(supplier.get()); //위에서 정의한 람다실행식으로 정의한 메소드를 실행
 
          // Consumer: 객체 T를 매게변수로 받아서 사용하며, 반환값은 없는 함수형 인터페이스
-        //Consumer<String> consumer = (str)->System.out.println(str.split(",")[1]);
-        Consumer<String> consumer = (s)->System.out.println("오늘은"+s+"요일");
-        //(str)-> System.out.println(str.split(" ")[0]); 문자열을 인자로 받아서 return
-        //(s)->System.out.println("오늘은"+s+"요일")
+        Consumer<String> consumer = (str)->System.out.println(str.split(",")[1]);
+        Consumer<String> consumer1 = (s)->System.out.println("오늘은"+s+"요일");
         consumer.accept("수");
 
         // Function: 객체 T를 매게변수로 받아서 처리한 후 R로 반환하는 함수형 인터페이스

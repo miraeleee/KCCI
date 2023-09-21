@@ -1,7 +1,7 @@
 package com.test.exam02;
 /*
  Option 객체란? null처리를 가급적 깔끔하게 하기 위한 클래스임
- - Null Point Exception 에러를 방지하기 위한  Wrapper 클래스로 
+ - NullPointException 에러를 방지하기 위한  Wrapper 클래스
  
  */
 

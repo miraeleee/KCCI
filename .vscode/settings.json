@@ -3,7 +3,10 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "ojdbc11.jar"
+        "ojdbc11.jar",
+        "c:\\JDK\\exitlib\\HikariCP-5.0.1.jar",
+        "c:\\JDK\\exitlib\\slf4j-api-2.0.6.jar",
+        "c:\\JDK\\exitlib\\mariadb-java-client-2.7.3.jar"
     ],
     "java.debug.settings.onBuildFailureProceed": true
 }

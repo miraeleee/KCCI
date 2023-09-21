@@ -6,8 +6,7 @@ enum Week1{ //특정 상수들을 모아서 관리할 목적으로 사용하는 
 
 enum Week2{
    SUN("일"), MON("월"), TUE("화"), WED("수"), THU("목"), FRI("금"), SAT("토") ;
-   private final String day; // 멤버변수 // 이런 형태의 enum클래스에서는 멤버변수를 하나 만들고 이것을 getter타입으로 추출하면 
-   //()내에 상수값이 추출됨.
+   private final String day; // 이런 형태의 enum클래스에서는 멤버변수를 하나 만들고 이것을 getter타입으로 추출하면 ()내에 상수값이 추출됨.
     Week2(String day){ //생성자
         this.day = day;
     }
