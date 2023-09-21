@@ -17,14 +17,13 @@ public class OptionalExam02 {
 
         System.out.println(list1.toString());
 
-        //Optional 객체의 함수혀 프로그램 특성 사용
+        //Optional 객체의 함수형 프로그램 특성 사용
         String a = "CDXX";
         String result;
         Optional<String> optional2 = Optional.ofNullable(a);
 
         result = optional2.filter(s->s.startsWith("AB")).orElse("A로 시작되는 값이 없어요");
         System.out.println(result);
-
         System.out.println(Optional.of("XYZ").map(String::toLowerCase).orElse("오류발생"));
     }
 }

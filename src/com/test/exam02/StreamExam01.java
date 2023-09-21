@@ -130,7 +130,7 @@ public class StreamExam01 {
         System.out.println("<-------reduce 메소드를 이용하여 1부터 100까지 합 구하기 -------->");
         Stream<Integer> numbers1 = Stream.of(1,2,3,4,5,6,7,8,9,10);
         Stream<Integer> numbers2 = Stream.of(1,2,3,4,5,6,7,8,9,10);
-        // 초기값이 없는 형태. numbers1은 reduce메소드를 통해 작동이 완료되면 소명된다. so,재사용 불가
+        // 초기값이 없는 형태. numbers1은 reduce메소드를 통해 작동이 완료되면 소멸된다. so,재사용 불가
         Optional<Integer> sum1 = numbers1.reduce((x,y)->x+y); //초기값이 없는 형태
         Optional<Integer> sum2 = Optional.ofNullable(numbers2.reduce(10, (x,y)->x+y)); //초기값이 있는 형태
         sum1.ifPresent(s->System.out.println("sum :"+s));

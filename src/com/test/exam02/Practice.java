@@ -1,35 +1,22 @@
 package com.test.exam02;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Practice {
     public static void main(String[] args) {
-        GStack<String> stringGStack= new GStack<String>();
-        stringGStack.push("aa");
+        int[] nums = {1,7,2,4,3,5,0,1,9,6};
+        System.out.println(Arrays.toString(nums));
 
-        for(int i=0; i<3; i++){
-            System.out.println();
+        for(int i=nums.length-1; i>0; i--){
+            for(int j=0; j<i; j++){
+                if(nums[j]>nums[j+1]){
+                    int temp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = temp;
+                }
+            }
         }
-    }
-
-}
-class GStack<T>{
-    int tos;
-    Object[] stck;
-
-    public GStack(){//생성자
-        tos = 0;
-        stck = new Object[10];
-    }
-    
-    public void push(T item){
-        if(tos ==10) return;
-        stck[tos] = item;
-        tos++;
-    }
-    public T pop(){
-        if(tos ==0) return null;
-        tos --;
-        return (T)stck[tos];
     }
 }
 

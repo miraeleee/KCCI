@@ -8,11 +8,11 @@ import java.util.Map;
 public class MemberInfoView {
     public static void main(String[] args) {
         List<Member> list = new ArrayList<>(); //동적배열을 지원하는 Collector Framework
-        list.add(new Member("김철수","남성",23));
-        list.add(new Member("이미래","여성",30));
-        list.add(new Member("송윤주","여성",29));
-        list.add(new Member("김수지","여성",28));
-        list.add(new Member("채종현","남성",27));
+        list.add(new Member(1,"김철수","남성",23));
+        list.add(new Member(2,"이미래","여성",30));
+        list.add(new Member(3,"송윤주","여성",29));
+        list.add(new Member(4,"김수지","여성",28));
+        list.add(new Member(5,"채종현","남성",27));
 
         for(Member member:list){ //배열전용 for문
             System.out.println(member.getName()+"\t"+member.getGender()+"\t"+member.getAge());  
