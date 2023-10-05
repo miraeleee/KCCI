@@ -12,6 +12,7 @@ public class JDBCConnectionExam {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         //오라클 전용 프로토콜로 데이터 베이스 처리
+        //String uri= "jdbc:oracle:thin:@localhost:1521:xe";
         String uri = "jdbc:mariadb://localhost:3306/springdev";
         String userid = "springdev";
         String userpw = "tlsfk656!";
@@ -40,14 +41,14 @@ public class JDBCConnectionExam {
             //          , rs.getString("gender")
             //          , rs.getInt("age")));
             // }
-            // 빌드패턴을 이용해서 member클래스에 값을 불러오는 방법(가독성이 좋음)(순서상관0)-여러 장점이 있어 자주 사용됨.
-            list.add(new Member.Builder()
-                        .id(rs.getInt("id"))
-                        .name(rs.getString("gender"))
-                        .gender(rs.getString("gender"))
+            // 빌드패턴을 이용해서 member클래스에 값을 불러오는 방법(가독성이 좋음)(순서상관x)-여러 장점이 있어 자주 사용됨.
+            list.add(new Member.Builder()                
                         .age(rs.getInt("age"))
+                        .id(rs.getInt("id"))
+                        .gender(rs.getString("gender"))
+                        .name(rs.getString("gender"))
                         .build());
-        }
+             }
             /*
             // 배열전용for문으로 출력(할것!)
             for(Member member:list){
@@ -64,7 +65,7 @@ public class JDBCConnectionExam {
                                     +"나이 :"+ l.getAge()));
             //성능에 영향이 있으므로 파이프라인 사용했으면, 닫아줘야함.          
             if(rs != null)rs.close();
-            if(stmt != null)rs.close();
-            if(con != null)rs.close();    
+            if(stmt != null)stmt.close();
+            if(con != null)con.close();    
 }
 }
