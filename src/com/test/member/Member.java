@@ -75,6 +75,7 @@ public class Member { //**DTO(Data Transfer Object)
         }
         public Builder age(int age){
             this.age = age;
+            
             return this;
         }
         public Member build(){
