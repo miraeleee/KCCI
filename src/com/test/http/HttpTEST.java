@@ -1,4 +1,4 @@
-package form.test.http;
+package com.test.http;
 
 import java.io.BufferedReader;
 import java.io.DataOutput;
@@ -20,8 +20,7 @@ class TesthttpRequest{
        
         HttpURLConnection connection = null;
         //connection생성
-        try {
-            URL url = new URL(targetURL);
+        try {         URL url = new URL(targetURL);
             connection = (HttpURLConnection)url.openConnection();
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded"); //컨텐트 타입 수동지정
