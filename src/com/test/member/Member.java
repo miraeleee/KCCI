@@ -61,8 +61,7 @@ public class Member { //**DTO(Data Transfer Object)
         private String gender;
         private int age;
 
-        public Builder id(int id){
-            this.id = id;
+        public Builder id(int id){       this.id = id;
             return this; // 메소드 종료후 내부 클래스인 BUild클래스가 종료되는것을 방지한다. 
         }
         public Builder name(String name){
@@ -75,14 +74,12 @@ public class Member { //**DTO(Data Transfer Object)
         }
         public Builder age(int age){
             this.age = age;
-            
             return this;
         }
         public Member build(){
             if(id== 0 || name ==null || gender ==null || age ==0)
             throw new IllegalStateException("멤버클래스에 값이 없네요");
-            return new Member(id, name, gender, age); // 값을 받고, 인자 4개인아웃클래스에 멤버변수에 값을 넣어줌,
-            
+            return new Member(id, name, gender, age); // 값을 받고, 인자 4개인아웃클래스에 멤버변수에 값을 넣어줌.
         }
 
     }
